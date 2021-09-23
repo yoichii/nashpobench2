@@ -1,0 +1,7 @@
+# @package _group_
+# epochs, seed, and codesidx are identified in the train.py
+epochs: -1 
+seed: -1 
+num_workers: 4 4 4 4 
+idx: -1
+gpu: 0

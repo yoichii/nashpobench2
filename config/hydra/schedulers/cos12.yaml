@@ -1,0 +1,5 @@
+# @package _group_
+schedulers:
+    - CosineAnnealingLR:
+        optimizer: optimizer
+        T_max: 12

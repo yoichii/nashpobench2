@@ -1,0 +1,15 @@
+# @package _group_
+- ReLUConvBN:
+    in_channels: in_channels
+    out_channels: in_channels
+    kernel_size: 3
+    padding: 1
+    bias: False
+- Pooling:
+    in_channels: in_channels
+    out_channels: in_channels
+    padding: 1
+- Identity
+- Zero:
+    in_channels: in_channels
+    out_channels: in_channels

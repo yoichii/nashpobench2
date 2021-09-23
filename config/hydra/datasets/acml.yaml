@@ -1,0 +1,93 @@
+# @package _group_
+train:
+    datasets:
+        - CIFAR10:
+            # set path to data
+            root: "'/Users/hirose/Documents/school/lab/yoichii_shiralab/experiments/nashpobench2.nosync/data'"
+            train: true
+            transform: transform
+            download: true
+    transforms:
+        - RandomHorizontalFlip
+        - RandomCrop:
+            size: 32
+            padding: 4
+        - ToTensor
+        - Normalize:
+            mean: '[x / 255 for x in [125.3, 123.0, 113.9]]'
+            std: '[x / 255 for x in [63.0, 62.1, 66.7]]'
+    dataloaders:
+        -   DataLoader:
+                dataset: dataset
+                batch_size: batch_size
+                sampler: sampler
+                num_workers: 4
+                pin_memory: true
+    options:
+        batch_size:
+            - 16
+            - 32
+            - 64
+            - 128
+            - 256
+            - 512
+valid:
+    datasets:
+        - CIFAR10:
+            # set path to data
+            root: "'/Users/hirose/Documents/school/lab/yoichii_shiralab/experiments/nashpobench2.nosync/data'"
+            train: true
+            transform: transform
+            download: true
+    transforms:
+        - RandomHorizontalFlip
+        - RandomCrop:
+            size: 32
+            padding: 4
+        - ToTensor
+        - Normalize:
+            mean: '[x / 255 for x in [125.3, 123.0, 113.9]]'
+            std: '[x / 255 for x in [63.0, 62.1, 66.7]]'
+    dataloaders:
+        - DataLoader:
+            dataset: dataset
+            batch_size: batch_size
+            sampler: sampler
+            num_workers: 4
+            pin_memory: true
+    options:
+        batch_size:
+            - 16
+            - 32
+            - 64
+            - 128
+            - 256
+            - 512
+test:
+    datasets:
+        - CIFAR10:
+            # set path to data
+            root: "'/Users/hirose/Documents/school/lab/yoichii_shiralab/experiments/nashpobench2.nosync/data'"
+            train: false
+            transform: transform
+            download: true
+    transforms:
+        - ToTensor
+        - Normalize:
+            mean: '[x / 255 for x in [125.3, 123.0, 113.9]]'
+            std: '[x / 255 for x in [63.0, 62.1, 66.7]]'
+    dataloaders:
+        - DataLoader:
+            dataset: dataset
+            batch_size: batch_size
+            sampler: sampler
+            num_workers: 4
+            pin_memory: true
+    options:
+        batch_size:
+            - 16
+            - 32
+            - 64
+            - 128
+            - 256
+            - 512

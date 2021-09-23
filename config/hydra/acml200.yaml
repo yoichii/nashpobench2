@@ -1,0 +1,11 @@
+defaults:
+    - architecture: nasbench201like
+    - optimizers: acml
+    - operations: wo_conv1
+    - schedulers: cos200
+    - criteria: crossentropy
+    - datasets: acml
+    - training: acml 
+hydra:
+    run:
+        dir: log/acml200/hydra

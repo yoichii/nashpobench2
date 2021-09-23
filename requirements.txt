@@ -1,0 +1,9 @@
+hydra-core
+mlflow
+numpy
+omegaconf
+pandas
+PyYAML
+scikit-learn
+torch
+torchvision

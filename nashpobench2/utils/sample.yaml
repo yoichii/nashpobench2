@@ -1,0 +1,28 @@
+sample1:
+    - 128
+sample2:
+    - Conv2d:
+        in_channels: 16
+        out_channels: 32
+        kernel_size: 3
+sample3:
+    - "'hello'"
+sample4:
+    - Adam:
+        params: params
+        lr: 0.1
+        weight_decay: 0.0001
+sample5:
+    - AdaptiveAvgPool2d:
+        output_size: 1
+    - SGD:
+        params: params
+        lr: 0.1
+        weight_decay: 0.0001
+    - Dropout
+    - 100
+    - "'hello'"
+    - Conv2d:
+        in_channels: 32
+        out_channels: 64
+        kernel_size: 1
